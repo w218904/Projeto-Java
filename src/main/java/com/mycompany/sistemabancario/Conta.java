@@ -5,7 +5,7 @@ package com.mycompany.sistemabancario;
  * @author w218904
  */
 
-public class Conta {
+public abstract class Conta {
     
     private Double saldo;
     
@@ -13,7 +13,7 @@ public class Conta {
         this.saldo = valor;
     }
 
-    public double getSaldo() {
+    public Double getSaldo() {
         return this.saldo;
     }
     
@@ -21,13 +21,12 @@ public class Conta {
         this.saldo += valor;
     }
     
+    
     public boolean saque (Double valor) {
-        if (this.saldo >= valor){
-        this.saldo += - valor;
+        this.saldo = this.saldo - valor;
         return true;
-        }
-        return false;
-    }  
+        
+    }
     
     public void transferePara(Conta destino, Double valor) {
         if (this.saque(valor)) {
