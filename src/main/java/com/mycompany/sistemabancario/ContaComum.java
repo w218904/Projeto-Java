@@ -4,10 +4,11 @@ package com.mycompany.sistemabancario;
  *
  * @author w218904
  */
+
 public class ContaComum extends Conta {
     
-    public ContaComum(Double valor) {
-        super(saldo);
+    public ContaComum(Double valorSaldo) {
+        super(valorSaldo);
     }
     
     @Override
